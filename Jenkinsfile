@@ -1,5 +1,5 @@
 pipeline {
-    // master executor should be set to 0
+    // master executor should be set to 0 excuturs
     agent any
     stages {
         stage('Build Jar') {
