@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FindFlightPage {
 
+
     private WebDriver driver;
     private WebDriverWait wait;
 
