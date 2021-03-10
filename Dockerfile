@@ -9,8 +9,8 @@ FROM openjdk:8u191-jre-alpine3.8
 WORKDIR /usr/share/automation
 
 # ADD .jars under project target from host into this image
-ADD target/selenium-docker.jar 			selenium-docker.jar
-ADD target/selenium-docker-tests.jar 	selenium-docker-tests.jar
+ADD target/selenium-docker-project.jar 			selenium-docker-project.jar
+ADD target/selenium-docker-project-tests.jar 	selenium-docker-project-tests.jar
 ADD target/libs							libs
 
 # in case of any other dependency like .csv / .json / .xls
