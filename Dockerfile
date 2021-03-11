@@ -20,7 +20,7 @@ ADD book-flight-module.xml				book-flight-module.xml
 ADD search-module.xml					search-module.xml
 
 # ADD health check script
-ADD healthcheck.sh                      healthcheck.sh
+#ADD healthcheck.sh                      healthcheck.sh
 
 # BROWSER -D preference
 # HUB_HOST
@@ -28,4 +28,4 @@ ADD healthcheck.sh                      healthcheck.sh
 # -D stand for args $ means that browser/host/module are pass as arguments
 # docker build -t=selenium-docker .
 # This will get the container with the images from the contianer repository and than will create the image
-ENTRYPOINT sh healthcheck.sh
+ENTRYPOINT -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=$HUB_HOST -DMODULE=$MODULE org.testng.TestNG
