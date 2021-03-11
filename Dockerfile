@@ -29,4 +29,4 @@ ADD healthcheck.sh                      healthcheck.sh
 # -D stand for args $ means that browser/host/module are pass as arguments
 # docker build -t=selenium-docker .
 # This will get the container with the images from the contianer repository and than will create the image
-ENTRYPOINT healthcheck.sh
+ENTRYPOINT sh healthcheck.sh
