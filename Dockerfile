@@ -1,6 +1,5 @@
 # a Dockerfile is a simple text file that contains the commands that
 # a user could call to assemble an image whereas Docker Compose is
-
 # this will pull the java and jre from alpine image
 FROM openjdk:8u191-jre-alpine3.8
 
@@ -11,7 +10,7 @@ WORKDIR /usr/share/automation
 # ADD .jars under project target from host into this image
 ADD target/selenium-docker-project.jar 			selenium-docker-project.jar
 ADD target/selenium-docker-project-tests.jar 	selenium-docker-project-tests.jar
-ADD target/libs									libs
+ADD target/libs						        	libs
 
 # in case of any other dependency like .csv / .json / .xls
 # please ADD that as well
