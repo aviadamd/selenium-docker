@@ -5,7 +5,7 @@ pipeline {
             steps {
                 //bat - windows
                 //sh - mac
-                bat "mvn clean package -DskipTests"
+                sh "mvn clean package -DskipTests"
             }
         }
         stage('Build Image') {

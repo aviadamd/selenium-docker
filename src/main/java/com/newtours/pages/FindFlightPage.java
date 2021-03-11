@@ -19,6 +19,7 @@ public class FindFlightPage {
     @FindBy(name = "buyFlights")
     private WebElement secondSubmitBtn;
 
+
     public FindFlightPage(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 30);
