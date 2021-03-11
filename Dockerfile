@@ -9,7 +9,7 @@ WORKDIR /usr/share/automation
 
 # ADD .jars under project target from host into this image
 ADD target/selenium-docker-project.jar 			selenium-docker-project.jar
-ADD target/selenium-docker-tests.jar 	        selenium-docker-tests.jar
+ADD target/selenium-docker-project-tests.jar 	selenium-docker-project-tests.jar
 ADD target/libs						        	libs
 
 # in case of any other dependency like .csv / .json / .xls
@@ -20,7 +20,7 @@ ADD book-flight-module.xml				book-flight-module.xml
 ADD search-module.xml					search-module.xml
 
 # ADD health check script
-ADD healthcheck.sh                      healthcheck.sh
+#ADD healthcheck.sh                      healthcheck.sh
 
 # BROWSER -D preference
 # HUB_HOST
