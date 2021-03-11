@@ -1,7 +1,7 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="search-module">
-    <test name="search-test-java" parallel="tests">
+    <test name="search-test-java">
         <parameter name="keyword" value="java" />
         <classes>
             <class name="com.searchmodule.tests.SearchTest" />
