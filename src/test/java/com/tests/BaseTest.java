@@ -6,7 +6,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 

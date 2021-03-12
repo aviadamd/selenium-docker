@@ -4,6 +4,7 @@ import com.newtours.pages.*;
 import com.tests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,7 @@ public class BookFlightTest extends BaseTest {
 
     @BeforeTest
     @Parameters({"noOfPassengers", "expectedPrice"})
-    public void setupParameters(String noOfPassengers,String expectedPrice){
+    public void setupParameters(@Optional String noOfPassengers,@Optional String expectedPrice){
         this.noOfPassengers = noOfPassengers;
         this.expectedPrice = expectedPrice;
     }
