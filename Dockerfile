@@ -1,8 +1,11 @@
 FROM openjdk:8u191-jre-alpine3.8
 
+# Workspace
+# add curl
 RUN apk add curl jq
 
-# Workspace
+# Workspace dir will create and can be navigate to from
+# docker run -it --entrypoint=/bin/sh selenium-docker
 WORKDIR /usr/share/automation
 
 # ADD .jar under target from host
