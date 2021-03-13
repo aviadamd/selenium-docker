@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage("Wait For Tests") {
+        stage("Wait For Jars Build") {
             steps { 
                 timeout(time: 3, unit: 'SECONDS') {
-                    retry(2) {
-                       echo "wait for test"
+                    retry(1) {
+                       echo "wait for build jar"
                     }   
                 }
             }    
@@ -15,6 +15,15 @@ pipeline {
                 bat "mvn clean package -DskipTests"
             }
         }
+        stage("Wait For Docker Build Image") {
+                    steps {
+                        timeout(time: 3, unit: 'SECONDS') {
+                            retry(1) {
+                               echo "wait for docker build image"
+                            }
+                        }
+                    }
+                }
         stage('Build Image') {
             steps {
                 bat "docker build -t=5311072/selenium-docker ."
