@@ -22,9 +22,16 @@ ADD book-flight-module.xml				book-flight-module.xml
 ADD search-module.xml					search-module.xml
 
 # ADD health check script
-ADD healthcheck.sh                      healthcheck.sh
+#ADD healthcheck.sh                      healthcheck.sh
 
 # BROWSER
 # HUB_HOST
 # MODULE
-ENTRYPOINT sh healthcheck.sh
+#ENTRYPOINT sh healthcheck.sh
+
+# Command line to execute the test
+# Expects below ennvironment variables
+# BROWSER = chrome / firefox
+# MODULE  = order-module / search-module
+# GRIDHOST = selenium hub hostname / ipaddress
+ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DHUB_HOST=$HUB_HOST -DBROWSER=$BROWSER org.testng.TestNG $MODULE
