@@ -1,10 +1,17 @@
 pipeline {
     agent any
     stages {
+        stage("Wait For Tests") {
+            steps { 
+                timeout(time: 3, unit: 'SECONDS') {
+                    retry(2) {
+                       echo "wait for test"
+                    }   
+                }
+            }    
+        }
         stage('Build Jar') {
             steps {
-                //bat - windows
-                //sh - mac
                 bat "mvn clean package -DskipTests"
             }
         }
