@@ -1,14 +1,18 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 # Environment Variables
 # HUB_HOST
 # BROWSER
 # MODULE
 
-while [ "$( curl -s http://"$HUB_HOST":4444/wd/hub/status )" != "true" ]
-do 
-sleep 1 
+echo "Checking if hub is ready - $HUB_HOST"
+
+while [ "$( curl -s http://$HUB_HOST:4444/wd/hub/status )" != "true" ]
+do
+	sleep 1
 done
 
 # start the java command
-java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DHUB_HOST="$HUB_HOST" -DBROWSER="$BROWSER" org.testng.TestNG "$MODULE" 
-done
+java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* \
+    -DHUB_HOST=$HUB_HOST \
+    -DBROWSER=$BROWSER \
+    org.testng.TestNG $MODULE

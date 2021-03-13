@@ -33,5 +33,5 @@ ADD search-module.xml					search-module.xml
 # Expects below ennvironment variables
 # BROWSER = chrome / firefox
 # MODULE  = order-module / search-module
-# GRIDHOST = selenium hub hostname / ipaddress
+# HOST = selenium hub hostname / ipaddress
 ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DHUB_HOST=$HUB_HOST -DBROWSER=$BROWSER org.testng.TestNG $MODULE
