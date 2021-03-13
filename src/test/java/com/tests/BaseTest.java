@@ -26,7 +26,8 @@ public class BaseTest {
             dc = DesiredCapabilities.firefox();
         } else dc = DesiredCapabilities.chrome();
 
-        if(System.getProperty("HUB_HOST") != null) host = System.getProperty("HUB_HOST");
+        if(System.getProperty("HUB_HOST") != null) 
+            host = System.getProperty("HUB_HOST");
 
         String testName = ctx.getCurrentXmlTest().getName();
         dc.setCapability("name", testName);
