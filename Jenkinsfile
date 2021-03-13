@@ -3,8 +3,6 @@ pipeline {
     stages {
         stage('Build Jar') {
             steps {
-                //bat - windows
-                //sh - mac
                 bat "mvn clean package -DskipTests"
             }
         }
