@@ -6,7 +6,7 @@
 
 while [ "$( curl -s http://"$HUB_HOST":4444/wd/hub/status )" != "true" ]
 do 
-	sleep 1 
+sleep 1 
 done
 
 # start the java command
