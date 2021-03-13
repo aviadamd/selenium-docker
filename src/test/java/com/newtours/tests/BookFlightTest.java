@@ -15,13 +15,13 @@ public class BookFlightTest extends BaseTest {
 
     @BeforeTest
     @Parameters({"noOfPassengers", "expectedPrice"})
-    public void setupParameters(@Optional String noOfPassengers,@Optional String expectedPrice){
+    public void setupParameters(String noOfPassengers,String expectedPrice){
         this.noOfPassengers = noOfPassengers;
         this.expectedPrice = expectedPrice;
     }
 
     @Test
-    public void registrationPage() throws InterruptedException {
+    public void registrationPage() {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.goTo();
         registrationPage.enterUserDetails("selenium", "docker");
