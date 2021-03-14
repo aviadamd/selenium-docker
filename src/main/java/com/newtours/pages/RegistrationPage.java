@@ -37,19 +37,26 @@ public class RegistrationPage {
     }
 
     public void goTo(){
-        this.driver.get("https://vins-udemy.s3.amazonaws.com/docker/docker-book-flight.html");
+        final String url = "https://vins-udemy.s3.amazonaws.com/docker/docker-book-flight.html";
+        System.out.println("navigate to " + url);
+        this.driver.get(url);
         this.wait.until(ExpectedConditions.visibilityOf(this.firstNameTxt));
     }
 
+    private void sendKeys(WebElement element, String key) {
+        element.sendKeys(key);
+        System.out.println("send " + key + " to " + element);
+    }
+
     public void enterUserDetails(String firstName, String lastName){
-        this.firstNameTxt.sendKeys(firstName);
-        this.lastNameTxt.sendKeys(lastName);
+        sendKeys(this.firstNameTxt, firstName);
+        sendKeys(this.lastNameTxt, lastName);
     }
 
     public void enterUserCredentials(String username, String password){
-        this.usernameTxt.sendKeys(username);
-        this.passwordTxt.sendKeys(password);
-        this.confirmPasswordTxt.sendKeys(password);
+        sendKeys(this.usernameTxt, username);
+        sendKeys(this.passwordTxt, password);
+        sendKeys(this.confirmPasswordTxt, password);
     }
 
     public void submit(){
