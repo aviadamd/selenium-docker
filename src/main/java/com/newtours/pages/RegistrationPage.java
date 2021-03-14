@@ -45,7 +45,7 @@ public class RegistrationPage {
 
     private void sendKeys(WebElement element, String key) {
         element.sendKeys(key);
-        System.out.println("send " + key + " to " + element);
+        System.out.println("send " + key + " to " + element.getText());
     }
 
     public void enterUserDetails(String firstName, String lastName){
