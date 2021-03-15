@@ -37,5 +37,10 @@ pipeline {
                 }                           
             }
         }
+        stage('Run Sanity Tests') {
+            steps {
+                bat "mvn clean install"
+            }
+        }
     }
 }
