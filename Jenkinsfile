@@ -37,6 +37,11 @@ pipeline {
                 }                           
             }
         }
+        stage('Build Docker Compose Up') {
+            steps {
+                bat "docker-compose up"
+            }
+        }
         stage('Run Sanity Tests') {
             steps {
                 bat "mvn clean install"
