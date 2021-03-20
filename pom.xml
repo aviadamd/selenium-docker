@@ -24,11 +24,13 @@
             <artifactId>selenium-server</artifactId>
             <version>3.10.0</version>
         </dependency>
+
     </dependencies>
 
     <build>
         <finalName>selenium-docker</finalName>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -41,13 +43,15 @@
                     <testTarget>1.8</testTarget>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
@@ -59,10 +63,11 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.1.2</version>
                 <executions>
                     <execution>
                         <goals>
