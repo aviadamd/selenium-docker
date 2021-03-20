@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage("Wait For Jars Build") {
+        stage("Wait Before Jars Build") {
             steps { 
                 timeout(time: 3, unit: 'SECONDS') {
                     retry(1) {
@@ -15,7 +15,7 @@ pipeline {
                 bat "mvn clean package -DskipTests"
             }
         }
-        stage("Wait For Docker Build Image") {
+        stage("Wait Before Docker Build Image") {
                     steps {
                         timeout(time: 3, unit: 'SECONDS') {
                             retry(1) {
@@ -24,12 +24,12 @@ pipeline {
                         }
                     }
                 }
-        stage('Build Image') {
+        stage('Build Docker Image') {
             steps {
                 bat "docker build -t=5311072/selenium-docker ."
             }
         }
-        stage('Push Image') {
+        stage('Push Image To Hub') {
            steps {
                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                    bat "docker login --username=${user} --password=${pass}"
