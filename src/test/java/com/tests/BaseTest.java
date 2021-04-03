@@ -22,7 +22,7 @@ public class BaseTest {
         DesiredCapabilities dc;
 
         if(System.getProperty("BROWSER") != null &&
-                System.getProperty("BROWSER").equalsIgnoreCase("firefox")){
+                System.getProperty("BROWSER").equals("firefox")){
             dc = DesiredCapabilities.firefox();
         } else dc = DesiredCapabilities.chrome();
 
